@@ -1,0 +1,23 @@
+{
+  "name": "Static Nginx Devcontainer",
+
+  // Construye usando el Dockerfile anterior
+  //"build": {
+  //  "dockerfile": "../Dockerfile"
+  //},
+
+  // Imagen de fallback si no hay Dockerfile
+  "image": "codercom/enterprise-base:ubuntu",
+
+  // Puertos que queremos mapear al host
+  //"appPort": [80],
+
+  // Carpeta de trabajo dentro del contenedor
+  "workspaceFolder": "/usr/share/nginx/html",
+
+  // Comando para arrancar Nginx en primer plano
+  //"postStartCommand": "touch /workspaces/.started && nginx -g 'daemon off;'"
+  
+  // (Opcional) Si usas volúmenes de Envbuilder, puedes montar así:
+  // "workspaceMount": "source=/workspaces,target=/usr/share/nginx/html,type=bind"
+}
