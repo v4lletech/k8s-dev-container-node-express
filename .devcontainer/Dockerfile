@@ -16,7 +16,7 @@ USER node
 WORKDIR /workspaces
 
 # Instala dependencias del proyecto
-COPY --chown=node:node ../ /workspaces
+COPY --chown=node:node . /workspaces
 RUN npm install
 
 # Puerto por defecto de la app Express
