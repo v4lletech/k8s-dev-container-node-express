@@ -1,23 +1,23 @@
+// .devcontainer/devcontainer.json
 {
-  "name": "Static Nginx Devcontainer",
-
-  // Construye usando el Dockerfile anterior
-  //"build": {
-  //  "dockerfile": "../Dockerfile"
-  //},
-
-  // Imagen de fallback si no hay Dockerfile
-  "image": "codercom/enterprise-base:ubuntu",
-
-  // Puertos que queremos mapear al host
-  //"appPort": [80],
-
-  // Carpeta de trabajo dentro del contenedor
-  "workspaceFolder": "/usr/share/nginx/html",
-
-  // Comando para arrancar Nginx en primer plano
-  //"postStartCommand": "touch /workspaces/.started && nginx -g 'daemon off;'"
+    "name": "Node.js Express Devcontainer",
+    "build": {
+      "dockerfile": "Dockerfile",          // Ubica aquí el Dockerfile
+      "context": ".."                      // Define el contexto de construcción
+    },
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "dbaeumer.vscode-eslint",
+          "esbenp.prettier-vscode"
+        ],
+        "settings": {                      // Mueve aquí tus settings
+          "terminal.integrated.shell.linux": "/bin/bash"
+        }
+      }
+    },
+    "forwardPorts": [3000],                // Sigue en la raíz
+    "workspaceFolder": "/workspaces",      // Sigue en la raíz
+    "remoteUser": "node"                   // Sigue en la raíz
+  }
   
-  // (Opcional) Si usas volúmenes de Envbuilder, puedes montar así:
-  // "workspaceMount": "source=/workspaces,target=/usr/share/nginx/html,type=bind"
-}
